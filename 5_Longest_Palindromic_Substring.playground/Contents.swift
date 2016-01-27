@@ -8,6 +8,22 @@ Given a string S, find the longest palindromic substring in S. You may assume th
 
 /// DP Solution
 
+/*
+
+DP[i+1][j-1] = true when  DP[i][j] == true && DP[i+1]][j-1]
+             = false other
+
+Initial: 
+DP[i][j] = true where i = j
+
+Interation Direction
+i >= j that make sense.
+
+for i in decent order
+    for j in decent order
+
+*/
+
 func findLongestPalindromicSubStringWithString(str: String) -> String {
     var dp = [[Bool]](count: str.characters.count, repeatedValue: [Bool](count: str.characters.count, repeatedValue: false))
     var maxGap = 0
